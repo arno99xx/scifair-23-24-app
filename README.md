@@ -3,7 +3,7 @@
 This is the application for the "sci fair 2023-2024" repo by MoreCookies and Arno99xx
 
 - Uses Python: PythonAnywhere
-- Uses React
+- Uses Flask
 
 ... extension to MoreCookies, and Arno99xx's ML Model for Skin identification.
 
