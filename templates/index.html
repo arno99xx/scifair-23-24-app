@@ -5,16 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Skin Lesion AI</title>
+    <link rel = "stylesheet" type = "text/css" href="styles.css">
 </head>
 <body>
-    <h1>Skin Lesion Classification App</h1>
-    <h3><a href="/about">About</a></h3>
+    <div class="banner"> 
+        <div class="bannercontent">
+            <div class="bannertext">
+                <strong>Note:</strong> This application is not a certified medical software, and you should visit you doctor for any medical concerns!
+            </div>
+            <button class="bannerconfirm" type="button"> <span class="material-icons"><strong>I Got It!</strong></span></button>
+            
+        </div>
+    </div>
+    <h1 class = "main title">Skinter: A Skin Lesion Classification App</h1>
+    <button class = "about_b"><a href="/about" style="text-decoration: none;"><strong>About</strong></a></button><br><br>
     <br>
     <form action="/process" method="post" enctype="multipart/form-data">
-        Select image to upload:<br>
-        <input type="file" name="fileToUpload" id="fileToUpload"><br>
-        <input type="submit" value="Upload Image" name="submit"><br>
+        <strong class="situ">Select image to upload:</strong> <br>
+    <div class = "inputs">
+        <input class = "choosefilebutton" type="file" name="fileToUpload" id="fileToUpload"><br>
+        <input class = "uploadfilebutton" type="submit" value="Upload Image" name="submit"><br>
+    </div>
     </form>
-    
+    <style>
+        *{
+           font-family: 'Quicksand', sans-serif; 
+        }
+        .banner{
+            background: rgb(180, 21, 21);
+            box-shadow: 1cm;
+        }
+        .bannercontent{
+            padding: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 100 ;
+            display: flex;
+            align-items: center;
+        }
+        .bannertext{
+            flex-grow: 1;
+            line-height: 1.4;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .bannerconfirm{
+            background: rgb(179, 41, 41);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .bannertext, .bannerconfirm > span {
+        color: #fff;
+        }
+        #fileToUpload{
+            text-align: center;
+            font-size: 35px;
+            display: flex;
+            color: rgb(82, 18, 18);
+            
+        }
+        .about_b {
+            font-size: 18px;
+        }
+        .inputs{
+            margin: 1cm;
+            font-size: 35px;
+            display: flex;
+            color: rgb(82, 18, 18);
+            flex-grow:1;
+            align-items: center;
+        }
+        .uploadfilebutton{
+            font-size: 35px;
+            background-color: rgb(148, 45, 45);
+            color: #fff;
+            box-shadow: 1cm;
+        }
+        #file-upload-button{
+            color:rgb(82, 18, 18) ;
+            background-color: rgb(148, 45, 45);
+        }
+        .situ{
+            font-size: 25px;
+        }
+
+    </style>
 </body>
+
 </html>

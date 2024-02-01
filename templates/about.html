@@ -4,18 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Skin Lesion AI</title>
+    <title>Skinter</title>
+    <link rel = "stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Skin Lesion Classification</h2>
-    <h6><a href="/">Home</a></h6>
+    <div class="banner"> 
+        <div class="bannercontent">
+            <div class="bannertext">
+                <strong>Note:</strong> This application is not a certified medical software, and you should visit you doctor for any medical concerns!
+            </div>
+            <button class="bannerconfirm" type="button"> <span class="material-icons"><strong>I Got It!</strong></span></button>
+            
+        </div>
+    </div>
+    <h1>Skinter: A Skin Lesion Classification App</h1>
+    <button class = "homebutton"><a href="/" style="text-decoration: none;"><strong>Home</strong></a></button>
+    <h4>About Us:</h4>
+        <p class="description">Created by 2 dedicated highschool students, Skinter is an application built to give <strong>unofficial</strong> diagnoses to individuals who seek quick assurance before visiting a doctor. It identifies a variety of possible skin lesions:</p>
+        <img src = "skinset1.jpg">
+        <ul>
+            <li><strong>Melanoma</strong></li>
+            <li><strong>Melanocytic nevus</strong></li>
+            <li><strong>Basal cell carcinoma</strong></li>
+            <li><strong>Actinic keratosis / Bowen’s disease</strong> (intraepithelial carcinoma)</li>
+            <li><strong>Benign keratosis </strong> (solar lentigo / seborrheic keratosis / lichen planus-like keratosis)</li>
+            <li><strong>Dermatofibroma</strong></li>
+            <li><strong>Vascular lesion</strong></li>
+
+        </ul>
+        <p class="warning">* This is not a replacement for your doctor, and you must visit a certified doctor/nurse for a thorough and complete diagnoses!</p>
     <br>
-    <h4>Authors</h4>
+    <h4>Authors:</h4>
         <ul>
             <li>Derek Lai</li>
-            <li>Arnav</li>
+            <li>Arnav Gupta</li>
         </ul>
     <hr />
-    
+    <style>
+        *{
+           font-family: 'Quicksand', sans-serif; 
+        }
+        .banner{
+            background: rgb(180, 21, 21);
+            box-shadow: 10cm;
+        }
+        .bannercontent{
+            padding: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 100 ;
+            display: flex;
+            align-items: center;
+        }
+        .bannertext{
+            flex-grow: 1;
+            line-height: 1.4;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .bannerconfirm{
+            background: rgb(179, 41, 41);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .bannertext, .bannerconfirm > span {
+        color: #fff;
+        }
+        .homebutton{
+            font-size: 18px;
+        }
+        .description{
+            max-width: 700px;
+        }
+        .warning{
+            max-width: 700px;
+        }
+    </style>
 </body>
+
 </html>

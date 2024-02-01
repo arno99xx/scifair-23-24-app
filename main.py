@@ -1,8 +1,13 @@
+import flask
 from flask import Flask, render_template, request
+<<<<<<< Updated upstream
 from keras.preprocessing.image import img_to_array
 from keras import layers
 from keras.applications import VGG19
 
+=======
+from keras_preprocessing.image import img_to_array
+>>>>>>> Stashed changes
 from keras.models import load_model
 from keras import Model
 import cv2
