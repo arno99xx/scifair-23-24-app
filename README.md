@@ -1,4 +1,5 @@
 # sci-fair-2023-2024-app-
+Skinter: A Skin Lesion Classification App
 
 This is the application for the "sci fair 2023-2024" repo by MoreCookies and Arno99xx
 
@@ -10,4 +11,9 @@ This is the application for the "sci fair 2023-2024" repo by MoreCookies and Arn
 Credits: 
 
 - App Developers: Arno99xx and MoreCookies
-- Software Developers: MoreCookies and Arno99xx
+    - CSS done by: Arno99xx
+    - HTML done by: MoreCookies and Arno99xx
+
+
+
+
