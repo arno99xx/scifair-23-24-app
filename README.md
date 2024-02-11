@@ -1,19 +1,25 @@
 # sci-fair-2023-2024-app-
-Skinter: A Skin Lesion Classification App
+Skinter: Skin Lesion Classification App
 
-This is the application for the "sci fair 2023-2024" repo by MoreCookies and Arno99xx
+This is the application for the "sci fair 2023-2024" repo by MoreCookies and Arno99xx,
+created with Flask, HTML, and python.
 
-- Uses Python: PythonAnywhere
-- Uses Flask
+Model created with FastAI.
 
-... extension to MoreCookies, and Arno99xx's ML Model for Skin identification.
+--------------------------
 
-Credits: 
-
-- App Developers: Arno99xx and MoreCookies
-    - CSS done by: Arno99xx
-    - HTML done by: MoreCookies and Arno99xx
-
+To run the app locally, first run in the command line:
+```
+pip install requirements.txt
+```
 
 
 
+Then, run this to start your localhost:
+```
+python fastai_main.py
+```
+
+--------------------------
+
+Do ignore the '[]

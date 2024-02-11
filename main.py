@@ -1,17 +1,14 @@
-import flask
 from flask import Flask, render_template, request
-<<<<<<< Updated upstream
 from keras.preprocessing.image import img_to_array
 from keras import layers
 from keras.applications import VGG19
 
-=======
-from keras_preprocessing.image import img_to_array
->>>>>>> Stashed changes
 from keras.models import load_model
 from keras import Model
 import cv2
 import numpy as np
+
+import tensorflow as tf
 
 from flask_cors import CORS, cross_origin
 
@@ -51,16 +48,9 @@ def cls_model(input_shape):
 
 # Process image and predict label
 def processImg(IMG_PATH):
-    # Read image
-    #model = load_model("final_class.h5")
-    
     # Preprocess image
     image = np.array(cv2.imread(IMG_PATH))
     image = cv2.resize(image, (256, 256))
-    #image = image.astype("float16") / 255.0
-    #image = img_to_array(image)
-    #image = np.expand_dims(image, axis=0)
-    #image = image.reshape((1,256,256,3))
     print(image.shape)
 
     res = model.predict(image[None, :, :, :])
@@ -100,6 +90,12 @@ def processReq():
     if model is None:
         model = cls_model((256,256,3))
         model.load_weights("final_class.h5")
+        converter = tf.lite.TFLiteConverter.from_keras_model(model)
+        tflite_model = converter.convert()
+        
+        # Save the model.
+        with open(str("final_class"), 'wb') as f:
+            f.write(tflite_model)
     data = request.files["fileToUpload"]
     data.save("img.jpg")
 
