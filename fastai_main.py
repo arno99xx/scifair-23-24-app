@@ -1,15 +1,8 @@
 from flask import Flask, render_template, request
-# from keras.preprocessing.image import img_to_array
-from keras.utils import img_to_array
-from keras.models import load_model
-
 from flask_cors import CORS, cross_origin
-
 from datetime import datetime
-
 import base64
 import os
-
 from PIL import Image
 import re
 
@@ -20,6 +13,14 @@ from processimg_fastai import processImg  # for fastai
 # Initializing flask application
 app = Flask(__name__)
 cors = CORS(app)
+
+lesion_lookup = {"mel":"Melanoma</strong> (mel)",
+                "nv":"Melanocytic nevus</strong> (nv)",
+                "bcc":"Basal cell carcinoma</strong> (bcc)",
+                "akiec":"Actinic keratosis / Bowen’s disease</strong> (intraepithelial carcinoma) (akiec)",
+                "bkl":"Benign keratosis </strong> (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
+                "df":"Dermatofibroma</strong> (df)",
+                "vasc":"Vascular lesion</strong> (vasc)"}
 
 @app.route("/")
 def main():
@@ -65,9 +66,11 @@ def processRequest():
                         os.remove(new_filepath)
                         new_filepath = jpg_path
 
-                    lesion_name, confidence_percent = processImg(new_filepath)
+                    label_name, confidence_percent = processImg(new_filepath)
                     confidence_percent_str = "{:.2f}".format(confidence_percent)
                     os.remove(new_filepath)
+
+                    lesion_name = lesion_lookup.get(label_name)
 
                     print("response normal...")
 
@@ -82,24 +85,6 @@ def processRequest():
     
     return render_template("index.html")
 
-def processRequest_old():
-    data = request.files["fileToUpload"]
-    new_filepath = datetime.utcnow().strftime('%Y%m%d_%H%M%S_%f')
-    # data.save("img.jpg")
-    data.save(new_filepath)
-
-    with open(new_filepath, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
-
-    #flower_name, confidence_percent = processImg("img.jpg")
-    flower_name, confidence_percent = processImg(new_filepath)
-
-    confidence_percent_str = "{:.2f}".format(confidence_percent)
-
-    os.remove(new_filepath)
-
-    #return flower_name
-    return render_template("response.html", flower_name=flower_name, confidence_percent_str=confidence_percent_str, img_base64_str=encoded_string)
 
 
 if __name__ == "__main__":

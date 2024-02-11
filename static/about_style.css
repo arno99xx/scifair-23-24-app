@@ -1,0 +1,47 @@
+*{
+    font-family: 'Quicksand', sans-serif; 
+ }
+ .banner{
+     background: rgb(180, 21, 21);
+     box-shadow: 10cm;
+ }
+ .bannercontent{
+     padding: 16px;
+     max-width: 1000px;
+     margin: 0 auto;
+     font-size: 100 ;
+     display: flex;
+     align-items: center;
+ }
+ .bannertext{
+     flex-grow: 1;
+     line-height: 1.4;
+     font-family: 'Quicksand', sans-serif;
+ }
+ .bannerconfirm{
+     background: rgb(179, 41, 41);
+     border: none;
+     cursor: pointer;
+     font-size: 16px;
+ }
+ .bannertext, .bannerconfirm > span {
+ color: #fff;
+ }
+ .homebutton{
+     font-size: 18px;
+     margin: 5px;
+ }
+ .description{
+     max-width: 700px;
+ }
+ .warning{
+     max-width: 700px;
+ }
+ .body-div {
+    padding: 5px;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* font-size: 100 ; */
+    display: flex;
+    align-items: center;
+ }

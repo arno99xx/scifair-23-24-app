@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Skin Lesion AI</title>
-    <link rel = "stylesheet" type = "text/css" href="styles.css">
+    <link rel = "stylesheet" type = "text/css" href="{{url_for('static', filename='index_style.css')}}">
 </head>
 <body>
     <div class="banner"> 
@@ -17,79 +17,88 @@
             
         </div>
     </div>
-    <h1 class = "main title">Skinter: A Skin Lesion Classification App</h1>
-    <button class = "about_b"><a href="/about" style="text-decoration: none;"><strong>About</strong></a></button><br><br>
-    <br>
-    <form action="/process" method="post" enctype="multipart/form-data">
-        <strong class="situ">Select image to upload:</strong> <br>
-    <div class = "inputs">
-        <input class = "choosefilebutton" type="file" name="fileToUpload" id="fileToUpload"><br>
-        <input class = "uploadfilebutton" type="submit" value="Upload Image" name="submit"><br>
+
+    <div class="title_content">
+        <span class = "main_title">Skinter: Skin Lesion Classification App</span>
+        <button class = "about_b"><a href="/about" style="text-decoration: none;"><strong>About</strong></a></button>
     </div>
-    </form>
-    <style>
-        *{
-           font-family: 'Quicksand', sans-serif; 
-        }
-        .banner{
-            background: rgb(180, 21, 21);
-            box-shadow: 1cm;
-        }
-        .bannercontent{
-            padding: 16px;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-size: 100 ;
-            display: flex;
-            align-items: center;
-        }
-        .bannertext{
-            flex-grow: 1;
-            line-height: 1.4;
-            font-family: 'Quicksand', sans-serif;
-        }
-        .bannerconfirm{
-            background: rgb(179, 41, 41);
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .bannertext, .bannerconfirm > span {
-        color: #fff;
-        }
-        #fileToUpload{
-            text-align: center;
-            font-size: 35px;
-            display: flex;
-            color: rgb(82, 18, 18);
-            
-        }
-        .about_b {
-            font-size: 18px;
-        }
-        .inputs{
-            margin: 1cm;
-            font-size: 35px;
-            display: flex;
-            color: rgb(82, 18, 18);
-            flex-grow:1;
-            align-items: center;
-        }
-        .uploadfilebutton{
-            font-size: 35px;
-            background-color: rgb(148, 45, 45);
-            color: #fff;
-            box-shadow: 1cm;
-        }
-        #file-upload-button{
-            color:rgb(82, 18, 18) ;
-            background-color: rgb(148, 45, 45);
-        }
-        .situ{
-            font-size: 25px;
-        }
 
-    </style>
+    <div class="steps">
+        <div class="step-text">Step 1 - Choose Image Source</div>
+    </div>
+
+    <div class="steps">
+        <div>    
+            <!-- <label for="fileToUpload" class="btn">Option 1: Select image from device</label>
+            <input id="fileToUpload" class="choosefilebutton" type="file" name="fileToUpload"  style="visibility:hidden;"> -->
+            <p class="step-indent">Option 1: Select image from device</p>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div>
+            <input type="file" class="choosefilebutton step-indent-half" id="fileToUpload" name="fileToUpload" >
+        </div>
+    </div>
+
+    <div class="steps">
+        <div>
+            <p class="step-indent">Or</p>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div>
+            <p class="step-indent">Option 2: Use Camera</p>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div>
+            <div class="step-indent">
+            <video id="video" controls autoplay playsInline></video>
+            <div>
+              <button id="btn-front" class="btn-camera">Front Camera</button>
+              <button id="btn-back" class="btn-camera">Back Camera</button>
+            </div>
+            <div>
+              <button id="btn-take-photo" class="btn-camera">Take photo</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div class="step-text">Step 2- Upload Image</div>
+    </div>
+
+    <div class="steps">
+        <form id="img_form" action="/process" method="post" enctype="multipart/form-data">
+            <!-- <strong class="situ">Select image to upload:</strong> <br> -->
+            <div class = "inputs">
+                <!-- <input class="choosefilebutton" type="file" name="fileToUpload" id="fileToUpload"><br> -->
+                <input class="uploadfilebutton" type="submit" value="Upload Image" name="submit"><br>
+                <input type="hidden" id="img_content" name="img_content" value="">
+            </div>
+        </form>
+    </div>
+
+    <div class="steps">
+        <div class="temp_buffer">
+            <!-- <canvas id="canvas"> </canvas> -->
+        </div>
+    </div>
+
+    <div class="steps">
+        <div class="step-text">Your selected image below:</div>
+    </div>
+
+    <div class="steps">
+        <div class="output">
+            <img id="photo" alt="selected image here" />
+        </div>
+    </div>
+
 </body>
-
+<script src="{{url_for('static', filename='index.js')}}"></script>
 </html>

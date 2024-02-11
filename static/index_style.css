@@ -1,0 +1,118 @@
+*{
+    font-family: 'Quicksand', sans-serif; 
+ }
+ .banner{
+     background: rgb(180, 21, 21);
+     box-shadow: 1cm;
+ }
+ .bannercontent{
+     padding: 16px;
+     max-width: 1000px;
+     margin: 0 auto;
+     font-size: 100 ;
+     display: flex;
+     align-items: center;
+ }
+ .bannertext{
+     flex-grow: 1;
+     line-height: 1.4;
+     font-family: 'Quicksand', sans-serif;
+ }
+ .bannerconfirm{
+     background: rgb(179, 41, 41);
+     border: none;
+     cursor: pointer;
+     font-size: 16px;
+ }
+ .bannertext, .bannerconfirm > span {
+ color: #fff;
+ }
+ .title_content {
+    padding: 5px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 100 ;
+    display: flex;
+    align-items: center;
+ }
+ .main_title {
+    font-size: 2em; 
+    margin: .67em 0
+ }
+ .choosefilebutton {
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    color: rgb(82, 18, 18);
+ }
+ .steps {
+    padding: 5px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 100 ;
+    display: flex;
+    align-items: center;
+ }
+ .step-text {
+    font-size: 1.5em; 
+    margin: .1em 0
+ }
+ .step-indent {
+    padding-left: 2em;
+ }
+ .step-indent-half {
+    padding-left: 1em;
+ }
+ /* #fileToUpload{
+     text-align: center;
+     font-size: 35px;
+     display: flex;
+     color: rgb(82, 18, 18);
+     
+ } */
+ .about_b {
+     font-size: 18px;
+     margin: 5px;
+ }
+ .inputs{
+     margin: 1cm;
+     font-size: 35px;
+     display: flex;
+     color: rgb(82, 18, 18);
+     flex-grow:1;
+     align-items: center;
+ }
+ .uploadfilebutton{
+     font-size: 35px;
+     background-color: rgb(148, 45, 45);
+     color: #fff;
+     box-shadow: 1cm;
+ }
+ #file-upload-button{
+     color:rgb(82, 18, 18) ;
+     background-color: rgb(148, 45, 45);
+ }
+ .situ{
+     font-size: 25px;
+ }
+ .btn {
+    display: inline-block;
+    background: #616161;
+    border-radius: 4px;
+    font-family: "arial-black";
+    font-size: 14px;
+    color: #FFF;
+    padding: 8px 12px;
+    cursor: pointer;   
+  }
+  .btn-camera {
+    display: inline-block;
+    background: #616161;
+    border-radius: 4px;
+    font-family: "arial-black";
+    font-size: 14px;
+    color: #FFF;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer; 
+  }

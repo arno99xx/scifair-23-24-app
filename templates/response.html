@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Skin Lesion AI</title>
+    <link rel = "stylesheet" href="{{url_for('static', filename='response_style.css')}}">
 </head>
 <body>
-    <h2>AI Score Results:</h2>
-    <h6><a href="/">Home</a></h6>
-    <br>
 
-    <p class="result">The AI detected <strong>{{ lesion }}</strong> with <strong>{{ score }}</strong> confidence. </p>
+    <div class="banner"> 
+        <div class="bannercontent">
+            <div class="bannertext">
+                <strong>Note:</strong> This application is not a certified medical software, and you should visit you doctor for any medical concerns!
+            </div>
+            <button class="bannerconfirm" type="button"> <span class="material-icons"><strong>I Got It!</strong></span></button>
+            
+        </div>
+    </div>
+
+    <div class="body-div">
+        <div>
+            <h1>AI Score Results:</h1>
+            <div><button class = "homebutton"><a href="/" style="text-decoration: none;"><strong>Home</strong></a></button></div>
+            <!-- <h6><a href="/">Home</a></h6>
+            <br> -->
+
+            <p class="result">The AI detected <strong>{{ lesion_name }}</strong> with <strong>{{ confidence_percent_str }}</strong> confidence. </p>
+
+            <p><img src="data:image/png;base64, {{ img_base64_str }}" height="150" alt="flower" /></p>
+        </div>
+    </div>
 </body>
   
 </html>
