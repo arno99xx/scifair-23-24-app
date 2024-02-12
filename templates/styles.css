@@ -1,3 +1,6 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
 .banner{
     background: rgb(180, 21, 21);
     box-shadow: 1cm;
@@ -15,7 +18,7 @@
     line-height: 1.4;
     font-family: 'Quicksand', sans-serif;
 }
-.bennerconfirm{
+.bannerconfirm{
     background: none;
     border: none;
     cursor: pointer;
