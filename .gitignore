@@ -52,3 +52,5 @@ l10n/
 
 test.py
 .vscode/settings.json
+saved_models/**
+*.zip

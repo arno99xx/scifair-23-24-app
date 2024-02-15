@@ -9,6 +9,7 @@ import re
 # from imglib import processImg   # for keras and tensorflow
 
 from processimg_fastai import processImg  # for fastai
+from mask_tensorflow import get_segmentation_mask
 
 # Initializing flask application
 app = Flask(__name__)
@@ -69,6 +70,13 @@ def processRequest():
                     label_name, confidence_percent = processImg(new_filepath)
                     confidence_percent_str = "{:.2f}".format(confidence_percent)
                     print(confidence_percent_str)
+
+                    try:
+                        mask = get_segmentation_mask(new_filepath)
+                        print(f"mask is {mask}")
+                    except:
+                        mask = "error.png"
+                    
                     os.remove(new_filepath)
 
                     lesion_name = lesion_lookup.get(label_name)
@@ -76,7 +84,10 @@ def processRequest():
                     print("response normal...")
 
                     #return predictions
-                    return render_template("response.html", lesion_name=lesion_name, confidence_percent_str=confidence_percent_str, img_base64_str=imgBase64)
+                    return render_template("response.html", lesion_name=lesion_name, confidence_percent_str=confidence_percent_str, 
+                                           img_base64_str=imgBase64, 
+                                           mask_path = mask)
+                                           #mask_base64_str=mask_base64)
             
             print("resopnse file error.")
             return render_template("error.html", error_message="File Processing Error", details="")
