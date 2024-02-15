@@ -14,13 +14,13 @@ from processimg_fastai import processImg  # for fastai
 app = Flask(__name__)
 cors = CORS(app)
 
-lesion_lookup = {"mel":"Melanoma</strong> (mel)",
-                "nv":"Melanocytic nevus</strong> (nv)",
-                "bcc":"Basal cell carcinoma</strong> (bcc)",
-                "akiec":"Actinic keratosis / Bowen’s disease</strong> (intraepithelial carcinoma) (akiec)",
-                "bkl":"Benign keratosis </strong> (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
-                "df":"Dermatofibroma</strong> (df)",
-                "vasc":"Vascular lesion</strong> (vasc)"}
+lesion_lookup = {"mel":"Melanoma (mel)",
+                "nv":"Melanocytic nevus (nv)",
+                "bcc":"Basal cell carcinoma (bcc)",
+                "akiec":"Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)",
+                "bkl":"Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
+                "df":"Dermatofibroma (df)",
+                "vasc":"Vascular lesion (vasc)"}
 
 @app.route("/")
 def main():
@@ -68,6 +68,7 @@ def processRequest():
 
                     label_name, confidence_percent = processImg(new_filepath)
                     confidence_percent_str = "{:.2f}".format(confidence_percent)
+                    print(confidence_percent_str)
                     os.remove(new_filepath)
 
                     lesion_name = lesion_lookup.get(label_name)
