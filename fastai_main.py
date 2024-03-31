@@ -15,13 +15,22 @@ from mask_tensorflow import get_segmentation_mask
 app = Flask(__name__)
 cors = CORS(app)
 
-lesion_lookup = {"mel":"Melanoma (mel)",
-                "nv":"Melanocytic nevus (nv)",
-                "bcc":"Basal cell carcinoma (bcc)",
-                "akiec":"Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)",
-                "bkl":"Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
-                "df":"Dermatofibroma (df)",
-                "vasc":"Vascular lesion (vasc)"}
+# lesion_lookup = {"mel":"Melanoma (mel)",
+#                 "nv":"Melanocytic nevus (nv)",
+#                 "bcc":"Basal cell carcinoma (bcc)",
+#                 "akiec":"Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)",
+#                 "bkl":"Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
+#                 "df":"Dermatofibroma (df)",
+#                 "vasc":"Vascular lesion (vasc)"}
+
+lesion_lookup = {"MEL":"Melanoma (mel)",
+                "NV":"Melanocytic nevus (nv)",
+                "BCC":"Basal cell carcinoma (bcc)",
+                "AKIEC":"Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)",
+                "BKL":"Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)",
+                "DF":"Dermatofibroma (df)",
+                "VASC":"Vascular lesion (vasc)"}
+
 
 @app.route("/")
 def main():
