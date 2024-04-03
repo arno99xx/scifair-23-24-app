@@ -90,6 +90,23 @@ def processRequest():
 
                     lesion_name = lesion_lookup.get(label_name)
 
+
+                    if lesion_name == 'Melanoma (mel)':
+                        description = 'Melanoma, is a cancerous lesion. One would have moles with: asymmetrical shape, changes in colour, changes in size, changes in symptoms, and unusual border.'
+                    if lesion_name == 'Melanocytic Nevus (nv)':
+                        description = 'Nevus, a non-cancerous lesion, is a growth on the skin. No symptoms.'
+                    if lesion_name == 'Basal cell carcinoma (bcc)':
+                        description = None
+                    if lesion_name == 'Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)':
+                        description = None
+                    if lesion_name == 'Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)':
+                        description = None
+                    if lesion_name == 'Dermatofibroma (df)':
+                        description = None
+                    if lesion_name == 'Vascular lesion (vasc)':
+                        description = None
+                    
+
                     print("response normal...")
 
                     #return predictions
