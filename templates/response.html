@@ -27,9 +27,10 @@
             <br> -->
 
             <p class="result">The AI detected <strong>{{ lesion_name }} with {{ confidence_percent_str }}</strong> confidence. </p>
-
+            <p>Lesion Description:</p>
+            <p>{{ description }}
             <p><img src="data:image/png;base64, {{ img_base64_str }}" height="150" width="150" alt="original" /></p>
-
+            
             <!-- <p><img src="data:image/png;base64, {{ mask_base64_str }}" height="150" width="150" alt="original" /></p> -->
 
             <p><img src="/static/{{ mask_path }}" height="150" width="150" alt="original" /></p>

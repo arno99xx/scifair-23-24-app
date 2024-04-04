@@ -96,21 +96,25 @@ def processRequest():
                     if lesion_name == 'Melanocytic Nevus (nv)':
                         description = 'Nevus, a non-cancerous lesion, is a growth on the skin. No symptoms.'
                     if lesion_name == 'Basal cell carcinoma (bcc)':
-                        description = None
+                        description = "Basal cell carcinoma is cancerous. They look like shiny, translucent skin colored bumps."
                     if lesion_name == 'Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)':
-                        description = None
+                        description = 'Actinic keratoses and intraepithelial carcinoma is cancerous. They are rough, dry, or scaly patches on skin less \
+                        than 1 inch in diameter. They range from pink, red, and brown in colour and itch, burn, bleed, and crust.'
                     if lesion_name == 'Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)':
-                        description = None
+                        description = 'Benign keratoses are not cancerous. They are itchy, waxy, or rough oval bumps typically on the face, chest, shoulders, or back. \
+                            They can have varied numbers of growths and varying colour, ranging from light tan, brown, and black.'
                     if lesion_name == 'Dermatofibroma (df)':
-                        description = None
+                        description = 'Dermatofibroma are usually not cancerous. They are small, firm bumps which feel like rubbery buttons on the skin surface \
+                            Vary from purple to pink and brown to grey in colour. Usually appear on lower legs on middle-aged adults and upper arms in females.'
                     if lesion_name == 'Vascular lesion (vasc)':
-                        description = None
+                        description = 'Vascular lesions can be both be cancerous and non-cancerous. They can develop in any part of the body, \
+                            and may be present as soft tissue mass, pain, swelling, or skin discoloration. They are found in blood vessels and may appear as birthmarks on a baby’s skin.'
                     
 
                     print("response normal...")
 
                     #return predictions
-                    return render_template("response.html", lesion_name=lesion_name, confidence_percent_str=confidence_percent_str, 
+                    return render_template("response.html", lesion_name=lesion_name, confidence_percent_str=confidence_percent_str, description=description,
                                            img_base64_str=imgBase64, 
                                            mask_path = mask)
                                            #mask_base64_str=mask_base64)
