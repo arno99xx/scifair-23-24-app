@@ -55,3 +55,4 @@ test.py
 saved_models/**
 *.zip
 *.jpg
+*.png

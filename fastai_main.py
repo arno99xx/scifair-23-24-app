@@ -90,27 +90,26 @@ def processRequest():
 
                     lesion_name = lesion_lookup.get(label_name)
 
-
-                    if lesion_name == 'Melanoma (mel)':
+                    if lesion_name == lesion_lookup.get("MEL"):
                         description = 'Melanoma, is a cancerous lesion. One would have moles with: asymmetrical shape, changes in colour, changes in size, changes in symptoms, and unusual border.'
-                    if lesion_name == 'Melanocytic Nevus (nv)':
+                    if lesion_name == lesion_lookup.get("NV"):
                         description = 'Nevus, a non-cancerous lesion, is a growth on the skin. No symptoms.'
-                    if lesion_name == 'Basal cell carcinoma (bcc)':
+                    if lesion_name == lesion_lookup.get("BCC"):
                         description = "Basal cell carcinoma is cancerous. They look like shiny, translucent skin colored bumps."
-                    if lesion_name == 'Actinic keratosis / Bowen’s disease (intraepithelial carcinoma) (akiec)':
+                    if lesion_name == lesion_lookup.get("AKIEC"):
                         description = 'Actinic keratoses and intraepithelial carcinoma is cancerous. They are rough, dry, or scaly patches on skin less \
                         than 1 inch in diameter. They range from pink, red, and brown in colour and itch, burn, bleed, and crust.'
-                    if lesion_name == 'Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis) (bkl)':
-                        description = 'Benign keratoses are not cancerous. They are itchy, waxy, or rough oval bumps typically on the face, chest, shoulders, or back. \
+                    if lesion_name == lesion_lookup.get("BKL"):
+                        description = 'Benign keratoses is not cancerous. They are itchy, waxy, or rough oval bumps typically on the face, chest, shoulders, or back. \
                             They can have varied numbers of growths and varying colour, ranging from light tan, brown, and black.'
-                    if lesion_name == 'Dermatofibroma (df)':
+                    if lesion_name == lesion_lookup.get("DF"):
                         description = 'Dermatofibroma are usually not cancerous. They are small, firm bumps which feel like rubbery buttons on the skin surface \
                             Vary from purple to pink and brown to grey in colour. Usually appear on lower legs on middle-aged adults and upper arms in females.'
-                    if lesion_name == 'Vascular lesion (vasc)':
+                    if lesion_name == lesion_lookup.get("VASC"):
                         description = 'Vascular lesions can be both be cancerous and non-cancerous. They can develop in any part of the body, \
                             and may be present as soft tissue mass, pain, swelling, or skin discoloration. They are found in blood vessels and may appear as birthmarks on a baby’s skin.'
                     
-
+                    print(description)
                     print("response normal...")
 
                     #return predictions
